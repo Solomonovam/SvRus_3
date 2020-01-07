@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Суверенная Россия</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    @*<nav class="navbar navbar-inverse navbar-fixed-top">*@
+    <nav class="navbar navbar-fixed-top" style="background-color: #fff">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Суверенная Россия</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a asp-area="">Новости</a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                            <li class="nav-item dropdown">
+                                <a asp-area="" asp-controller="Home" asp-action="Index">События</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a asp-area="" asp-controller="Home" asp-action="Gelerey">Фотогалерея</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a asp-area="" asp-controller="" asp-action="">Видео</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a asp-area="">Жизнь партии</a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                            <li class="nav-item dropdown">
+                                <a asp-area="" asp-controller="Home" asp-action="About">О партии</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a asp-area="" asp-controller="" asp-action="">Программа</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a asp-area="" asp-controller="" asp-action="">Законопроекты</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a asp-area="" asp-controller="" asp-action="">Устав</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a asp-area="" asp-controller="" asp-action="">Объявления</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a asp-area="" asp-controller="" asp-action="">Вступить в партию</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a asp-area="">Участники партии</a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                            <li class="nav-item dropdown">
+                                <a asp-area="" asp-controller="" asp-action="">Биография</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Контакты</a></li>
+                    <li class="nav-item dropdown">
+                        <a data-toggle="dropdown" asp-area="">Test_12</a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" tabindex="-1" href="#">Тестовый подраздел</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item"><a tabindex="-1" href="#">1-ый уровень</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-item" href="#">Еще больше..</a>
+                                        <ul class="dropdown-menu">
+                                            <li class="dropdown-item"><a href="#">3-ий уровень</a></li>
+                                            <li class="dropdown-submenu">
+                                                <a class="dropdown-item" href="#">4-ый уровень</a>
+                                                <ul class="dropdown-menu">
+                                                    <li class="dropdown-item"><a href="#">1th level</a></li>
+                                                    <li class="dropdown-item"><a href="#">2th level</a></li>
+                                                    <li class="dropdown-item"><a href="#">3th level</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown-item"><a href="#">3rd level</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-item"><a href="#">Second level</a></li>
+                                    <li class="dropdown-item"><a href="#">Second level</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <partial name="_CookieConsentPartial" />
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2019 - Суверенная Россия. Разработано GirSol SOFT. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
