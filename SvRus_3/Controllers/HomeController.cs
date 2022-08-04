@@ -54,7 +54,7 @@ namespace SvRus_3.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Страница с контактами";
+            ViewData["Message"] = "Контакты IT-подразделения";
 
             return View();
         }
