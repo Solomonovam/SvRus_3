@@ -26,6 +26,7 @@ namespace SvRus_3
         //        });
         //исходник
         //Line1
+        //Line2
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
